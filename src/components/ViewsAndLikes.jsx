@@ -3,15 +3,17 @@ import CommentSection from "./CommentSection";
 
 function ViewsAndLikes({ video }) {
   const [upVotes, setUpVotes] = useState(video.upvotes);
+  const [donwVotes, setDownVotes] = useState(video.downvotes);
 
   function handleUpVotes() {
     // setUpVotes(upVotes)
     console.log("clicked", upVotes);
+    setUpVotes(upVotes + 1);
   }
 
   function handleDownVotes() {
-    let n = -1;
-    return n--;
+    console.log("clicked", donwVotes);
+    setDownVotes(donwVotes - 1);
   }
 
   return (
@@ -22,9 +24,7 @@ function ViewsAndLikes({ video }) {
       </p>
       <span>
         <button onClick={handleUpVotes}>{upVotes} 👍🏾</button>
-        <button onClick={handleDownVotes}>
-          {video.downvotes + handleDownVotes()} 👎🏾
-        </button>
+        <button onClick={handleDownVotes}>{donwVotes} 👎🏾</button>
       </span>
       <CommentSection video={video} />
     </div>
