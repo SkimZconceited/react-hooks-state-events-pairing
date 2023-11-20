@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import CommentSection from "./CommentSection";
+import SearchBar from "./SearchBar";
 
 function ViewsAndLikes({ video }) {
   const [upVotes, setUpVotes] = useState(video.upvotes);
@@ -26,6 +27,7 @@ function ViewsAndLikes({ video }) {
         <button onClick={handleUpVotes}>{upVotes} 👍🏾</button>
         <button onClick={handleDownVotes}>{donwVotes} 👎🏾</button>
       </span>
+      <SearchBar />
       <CommentSection video={video} />
     </div>
   );
